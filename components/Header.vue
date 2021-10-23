@@ -8,9 +8,13 @@
         <span class="ml-3 text-xl">Gompei Blog</span>
       </a>
       <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-gray-900">home</a>
-        <a class="mr-5 hover:text-gray-900">about</a>
-        <a class="mr-5 hover:text-gray-900">github</a>
+        <nuxt-link class="mr-5 hover:text-gray-900" to="/">
+          home
+        </nuxt-link>
+        <nuxt-link class="mr-5 hover:text-gray-900" to="/about">
+          about
+        </nuxt-link>
+        <a class="mr-5 hover:text-gray-900" href="https://github.com/Gompei">github</a>
       </nav>
     </div>
   </header>
