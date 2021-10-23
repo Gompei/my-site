@@ -1,7 +1,17 @@
 <template>
-  <header class="header">
-    <div class="nav-desktop">
-      <NavDesktop />
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <img src="~/assets/image/icon.png" class="logo-image">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+        <span class="ml-3 text-xl">Gompei Blog</span>
+      </a>
+      <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-gray-900">home</a>
+        <a class="mr-5 hover:text-gray-900">about</a>
+        <a class="mr-5 hover:text-gray-900">github</a>
+      </nav>
     </div>
   </header>
 </template>
@@ -11,12 +21,8 @@
 </script>
 
 <style lang="scss" scoped>
-.header {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 0 4px rgba(0,0,0,.15);
+.logo-image {
+  width: 25px;
+  height: 25px;
 }
 </style>
