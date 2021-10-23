@@ -16,10 +16,6 @@
   </header>
 </template>
 
-<script>
-
-</script>
-
 <style lang="scss" scoped>
 .logo-image {
   width: 25px;
