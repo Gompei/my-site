@@ -1,0 +1,17 @@
+service: my-site
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-northeast-1
+
+functions:
+  nuxt:
+    handler: lambda.handler
+    timeout: 30
+    events:
+    - http: ANY /
+    - http: 'ANY {proxy+}'
