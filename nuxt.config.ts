@@ -1,4 +1,6 @@
-export default {
+import { NuxtConfig } from '@nuxt/types'
+
+const nuxtConfig: NuxtConfig = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'my-site',
@@ -47,3 +49,5 @@ export default {
   build: {
   }
 }
+
+export default nuxtConfig
