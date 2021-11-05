@@ -20,7 +20,7 @@
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .logo-image {
   width: 25px;
   height: 25px;

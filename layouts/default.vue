@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .container {
   display: flex;
   flex-direction: column;

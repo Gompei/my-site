@@ -46,7 +46,7 @@
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .logo-image {
   width: 52px;
   height: 55px;
