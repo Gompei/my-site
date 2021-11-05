@@ -7,7 +7,7 @@
           Gompei
         </h1>
         <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
-          バックエンド・クラウドエンジニア
+          エンジニア
         </p>
         <div class="flex mt-2 justify-center">
           <div class="w-32 h-1 rounded-full bg-indigo-500 inline-flex" />

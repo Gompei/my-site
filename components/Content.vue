@@ -10,26 +10,30 @@
       </div>
     </section>
     <section class="text-gray-600 body-font">
-      <div class="container px-8  mx-auto">
-        <div class="flex flex-wrap -m-4">
-          <div class="p-4 md:w-1/4 md:h-1/3">
-            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-              <img class="lg:h-18 md:h-18 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
-              <div class="p-6">
-                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                  CATEGORY1 / CATEGORY1
-                </h2>
-                <h1 class="title-font text-lg font-medium text-gray-900 mb-2">
-                  記事タイトル
-                </h1>
-                <p class="leading-relaxed mb-2">
-                  これはテストです。これはテストです。これはテストです。これはテストです。
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
+            ※エラーではありません。テスト公開です。
+          </h2>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+            (  ´∀｀)＜ぬるぽ
+          </h1>
         </div>
+        <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" @click="alertMessage">
+          run
+        </button>
       </div>
     </section>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class Content extends Vue {
+  alertMessage () {
+    alert('(  ´∀｀)＜NullPointerException')
+  }
+}
+</script>

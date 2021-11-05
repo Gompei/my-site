@@ -71,5 +71,11 @@ jobs:
         with:
           aws-region: us-east-1
           role-to-assume: ${{secrets.AWS_IAM_TO_ASSUME}}
-          role-session-name: MySessionName
-      - run: aws sts get-caller-identity
+          role-session-name: my-site-front-github-actions-session
+      
+      - name: Deploy Site
+        run: aws s3 cp dist s3://${{secrets.MY_SITE_DOMAIN}}/ --recursive
+
+      # TODO: 今後はcliでidを取得するように修正
+      - name: Delete cache  
+        run: aws cloudfront create-invalidation --distribution-id EJIJE5QVC65BL --paths "/*"
