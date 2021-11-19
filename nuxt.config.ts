@@ -2,52 +2,40 @@ import { NuxtConfig } from '@nuxt/types'
 
 const nuxtConfig: NuxtConfig = {
   target: 'static',
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'my-site',
+    title: 'Gompei Tech Blog',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Gompei Tech Blog' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Gompeiのテックブログ' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:title', property: 'og:title', content: 'Gompeiのテックブログ' },
+      { hid: 'og:url', property: 'og:url', content: 'https://gom60.com/' },
+      { hid: 'og:description', property: 'og:description', content: 'バックエンドエンジニア Gompeiのテックブログです。Golang、AWS、GCP、サーバーサイド寄りの情報を記事にしています。' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  loading: { color: '#fff' },
   css: [
   ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss'
   ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios'
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
 }
