@@ -10,7 +10,7 @@ const nuxtConfig: NuxtConfig = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Gompei Tech Blog' },
+      { hid: 'description', name: 'description', content: 'Gompei Blog' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Gompeiのテックブログ' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:title', property: 'og:title', content: 'Gompeiのテックブログ' },
