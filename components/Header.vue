@@ -14,8 +14,12 @@
         <nuxt-link to="/about" class="mr-5 hover:text-gray-900">
           about
         </nuxt-link>
-        <a href="https://github.com/Gompei" class="mr-5 hover:text-gray-900">github</a>
       </nav>
+      <div>
+        <a title="Follow me on twitter" href="https://github.com/Gompei" target="_blank" class="block w-8 h-8 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+          <img class="object-cover object-center w-full h-full rounded-full" src="~/assets/image/gihtub_icon.png">
+        </a>
+      </div>
     </div>
   </header>
 </template>
