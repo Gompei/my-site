@@ -1,29 +1,101 @@
 <template>
   <div>
-    <section class="text-gray-600 body-font">
-      <div class="px-5 py-6 mx-auto">
-        <div class="flex flex-col text-center w-full mb-4">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
-            Articles
-          </h1>
+    <!-- Title -->
+    <div class="py-6">
+      <div class="flex flex-col text-center w-full">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+          Articles
+        </h1>
+      </div>
+    </div>
+    <!-- Content -->
+    <div>
+      <div class="container">
+        <div class="flex flex-wrap place-items-center">
+          <div class="p-1 flex-1">
+            <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-auto">
+              <a href="#">
+                <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
+                <div class="bg-white p-4">
+                  <p class="text-indigo-500 text-2xl font-medium">
+                    テストタイトル
+                  </p>
+                  <p class="text-gray-800 text-sm font-medium mb-2">
+                    テストサブタイトル
+                  </p>
+                  <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
+                    <span class="m-1 px-2 py-1 rounded bg-indigo-500">
+                      #タグ
+                    </span>
+                  </div>
+                  <div class="flex items-center mt-2">
+                    <div class="pl-3">
+                      <div class="font-medium">
+                        YYYY年MM月DD日
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="p-1 flex-1">
+            <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-auto">
+              <a href="#">
+                <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
+                <div class="bg-white p-4">
+                  <p class="text-indigo-500 text-2xl font-medium">
+                    テストタイトル
+                  </p>
+                  <p class="text-gray-800 text-sm font-medium mb-2">
+                    テストサブタイトル
+                  </p>
+                  <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
+                    <span class="m-1 px-2 py-1 rounded bg-indigo-500">
+                      #タグ
+                    </span>
+                  </div>
+                  <div class="flex items-center mt-2">
+                    <div class="pl-3">
+                      <div class="font-medium">
+                        YYYY年MM月DD日
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="p-1 flex-1">
+            <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-auto">
+              <a href="#">
+                <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
+                <div class="bg-white p-4">
+                  <p class="text-indigo-500 text-2xl font-medium">
+                    テストタイトル
+                  </p>
+                  <p class="text-gray-800 text-sm font-medium mb-2">
+                    テストサブタイトル
+                  </p>
+                  <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
+                    <span class="m-1 px-2 py-1 rounded bg-indigo-500">
+                      #タグ
+                    </span>
+                  </div>
+                  <div class="flex items-center mt-2">
+                    <div class="pl-3">
+                      <div class="font-medium">
+                        YYYY年MM月DD日
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-col text-center w-full mb-20">
-          <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
-            ※エラーではありません。テスト公開です。
-          </h2>
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            (  ´∀｀)＜ぬるぽ
-          </h1>
-        </div>
-        <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" @click="alertMessage">
-          run
-        </button>
-      </div>
-    </section>
+    </div>
   </div>
 </template>
 
