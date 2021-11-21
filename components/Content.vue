@@ -14,7 +14,7 @@
         <div class="flex flex-wrap place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-2">
-              <a href="#">
+              <nuxt-link to="/article">
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
                 <div class="bg-white p-4">
                   <p class="text-indigo-500 text-2xl font-medium">
@@ -36,12 +36,12 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <div class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-2">
-              <a href="#">
+              <nuxt-link to="/article">
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
                 <div class="bg-white p-4">
                   <p class="text-indigo-500 text-2xl font-medium">
@@ -63,12 +63,12 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <div class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-auto">
-              <a href="#">
+              <nuxt-link to="/article">
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
                 <div class="bg-white p-4">
                   <p class="text-indigo-500 text-2xl font-medium">
@@ -90,12 +90,12 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <div class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-auto">
-              <a href="#">
+              <nuxt-link to="/article">
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
                 <div class="bg-white p-4">
                   <p class="text-indigo-500 text-2xl font-medium">
@@ -117,12 +117,12 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <div class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-auto">
-              <a href="#">
+              <nuxt-link to="/article">
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
                 <div class="bg-white p-4">
                   <p class="text-indigo-500 text-2xl font-medium">
@@ -144,12 +144,12 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <div class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-auto">
-              <a href="#">
+              <nuxt-link to="/article">
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
                 <div class="bg-white p-4">
                   <p class="text-indigo-500 text-2xl font-medium">
@@ -171,7 +171,7 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
         </div>
