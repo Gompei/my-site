@@ -3,7 +3,7 @@ import { NuxtConfig } from '@nuxt/types'
 const nuxtConfig: NuxtConfig = {
   target: 'static',
   head: {
-    title: 'Gompei Tech Blog',
+    title: 'Gompei Blog',
     htmlAttrs: {
       lang: 'ja'
     },
