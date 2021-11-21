@@ -70,7 +70,7 @@
                     <span class="bg-indigo-500 h-2 w-2 m-2 rounded-full" />
                     <div class="flex-grow font-medium px-2">
                       2021年11月
-                      Microsoft Certified：Azure administrator associate
+                      Microsoft Certified Azure administrator associate
                     </div>
                   </div>
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
@@ -112,7 +112,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/b1da38a7-2f3b-48eb-bb7e-38fe470a0bdf/public_url" target="_blank">
                         2021年8月
-                        AWS Certified Security – Specialty
+                        AWS Certified Security - Specialty
                       </a>
                     </div>
                   </div>
@@ -121,7 +121,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/4a9161ed-6f06-4c2d-b6ea-a3290987aeee/public_url" target="_blank">
                         2021年7月
-                        AWS Certified Advanced Networking – Specialty
+                        AWS Certified Advanced Networking - Specialty
                       </a>
                     </div>
                   </div>
@@ -130,7 +130,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/89c28e3f-2d09-48b6-8d6c-08ccf2916661/public_url" target="_blank">
                         2021年7月
-                        Microsoft Certified：Azure Fundamentals
+                        Microsoft Certified Azure Fundamentals
                       </a>
                     </div>
                   </div>
@@ -139,7 +139,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/3bc6d162-efaf-4b7b-9a0f-9da157680fcc/public_url" target="_blank">
                         2021年6月
-                        AWS Certified Solutions Architect – Professional
+                        AWS Certified Solutions Architect - Professional
                       </a>
                     </div>
                   </div>
@@ -164,7 +164,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/e86d2e0d-1f77-4953-92d4-a87de88f96b8/public_url" target="_blank">
                         2021年3月
-                        AWS Certified Solutions Architect – Associate
+                        AWS Certified Solutions Architect - Associate
                       </a>
                     </div>
                   </div>
