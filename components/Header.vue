@@ -16,7 +16,14 @@
         </nuxt-link>
       </nav>
       <div>
-        <a title="gompei gihtub account" href="https://github.com/Gompei" target="_blank" class="block w-8 h-8 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+        <a
+          alt="github-logo"
+          title="gompei gihtub account"
+          href="https://github.com/Gompei"
+          rel="noopener"
+          target="_blank"
+          class="block w-8 h-8 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
+        >
           <img class="object-cover object-center w-full h-full rounded-full" src="~/assets/image/gihtub_icon.png">
         </a>
       </div>
