@@ -198,7 +198,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/1840a046-4b8c-4b20-b389-b92610698aac/public_url" target="_blank">
                         2020年5月
-                        Oracle Certified Java Programmer, Gold SE 8
+                        Oracle Certified Java Programmer Gold SE 8
                       </a>
                     </div>
                   </div>
@@ -207,7 +207,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/cf68371f-22e4-4a09-b550-19470b25e294/public_url" target="_blank">
                         2020年2月
-                        Oracle Certified Java Programmer, Silver SE 8
+                        Oracle Certified Java Programmer Silver SE 8
                       </a>
                     </div>
                   </div>
@@ -216,7 +216,7 @@
                     <div class="flex-grow font-medium px-2">
                       <a title="Qualification link" href="https://www.credly.com/badges/efcc9057-6d90-4ec0-ac2f-e098f37518d5/public_url" target="_blank">
                         2020年2月
-                        Oracle Certified Java Programmer, Bronze SE 7/8
+                        Oracle Certified Java Programmer Bronze SE 7/8
                       </a>
                     </div>
                   </div>
