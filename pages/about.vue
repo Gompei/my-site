@@ -1,8 +1,9 @@
 <template>
   <section class="text-gray-600 body-font">
+    <!-- introduction -->
     <div class="container px-5 pt-5 mx-auto">
       <div class="text-center mb-2">
-        <img src="~/assets/image/icon.png" class="logo-image">
+        <img src="~/assets/image/icon.png" class="icon-image">
         <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
           Gompei
         </h1>
@@ -11,6 +12,7 @@
         </p>
       </div>
     </div>
+    <!-- OSS -->
     <div>
       <div class="container pt-5 mx-auto">
         <div class="text-center">
@@ -30,6 +32,7 @@
         </div>
       </div>
     </div>
+    <!-- WEB APP -->
     <div>
       <div class="container pt-5 mx-auto">
         <div class="text-center">
@@ -49,6 +52,7 @@
         </div>
       </div>
     </div>
+    <!-- qualification -->
     <div>
       <div class="container pt-5 mx-auto">
         <div class="text-center">
@@ -237,7 +241,7 @@
   height: 0.1px;
 }
 
-.logo-image {
+.icon-image {
   width: 62px;
   height: 65px;
   margin: 0 auto 5px auto;
