@@ -69,8 +69,10 @@
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
                     <span class="bg-indigo-500 h-2 w-2 m-2 rounded-full" />
                     <div class="flex-grow font-medium px-2">
-                      2021年11月
-                      Microsoft Certified Azure administrator associate
+                      <a title="Qualification link" href="https://www.credly.com/badges/a4279e18-dbe8-4cc2-8cbd-db7e78d8cd88/public_url" target="_blank">
+                        2021年11月
+                        Microsoft Certified Azure administrator associate
+                      </a>
                     </div>
                   </div>
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
