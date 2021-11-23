@@ -111,9 +111,9 @@ import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { Article } from '@/types'
 
 @Component
-export default class Content extends Vue {
+export default class Articles extends Vue {
     @Prop({ type: [Object, Array], required: true })
-      articles: Article[]
+      articles: Article[] | undefined
 
     created () {
       console.log(this.articles)
