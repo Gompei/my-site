@@ -8,7 +8,6 @@ export class Article {
   subTitle?: string
   imageURL?: string
   categoryTag?: string
-  description?: string
   content?: string
   createTimeStamp?: string
   updateTimeStamp?: string
