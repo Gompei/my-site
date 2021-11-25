@@ -8,10 +8,30 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            // 'max-width': '100%',
+            // 'box-sizing': 'border-box',
+            'overflow-wrap': 'break-word',
+            h1: {
+              // color: '#3182ce',
+              'margin-top': '0.6em'
+            },
+            h3: {
+              // color: '#3182ce',
+              'margin-top': '0.6em'
+            }
+          }
+        }
+      }
+    }
   },
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }
