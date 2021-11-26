@@ -236,7 +236,7 @@
   </section>
 </template>
 
-<style scoped>
+<style>
 .line {
   height: 0.1px;
 }
