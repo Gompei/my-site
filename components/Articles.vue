@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Title -->
     <div class="py-6">
       <div class="flex flex-col text-center w-full">
         <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
@@ -8,7 +7,7 @@
         </h1>
       </div>
     </div>
-    <!-- Content -->
+
     <div>
       <div class="container">
         <div class="flex flex-wrap place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -18,10 +17,10 @@
                 <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
                 <div class="bg-white p-4">
                   <p class="text-indigo-500 text-2xl font-medium">
-                    テストタイトル
+                    {{ article.title }}
                   </p>
                   <p class="text-gray-800 text-sm font-medium mb-2">
-                    テストサブタイトル
+                    {{ article.subTitle }}
                   </p>
                   <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
                     <span class="m-1 px-2 py-1 rounded bg-indigo-500">
@@ -42,8 +41,7 @@
         </div>
       </div>
 
-      <!-- スクロールページ -->
-      <div class="flex flex-col items-center my-12">
+      <!-- <div class="flex flex-col items-center my-12">
         <div class="flex text-gray-700">
           <div class="h-8 w-8 mr-1 flex justify-center items-center  cursor-pointer">
             <svg
@@ -62,26 +60,15 @@
             </svg>
           </div>
           <div class="flex h-8 font-medium ">
-            <nuxt-link to="/?page=1" class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2" @click.native="transitionPage">
-              1
-            </nuxt-link>
-            <nuxt-link to="/?page=2" class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
-              2
-            </nuxt-link>
-            <nuxt-link to="/?p=3" class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
-              3
-            </nuxt-link>
-            <div class="w-8 md:flex justify-center items-center hidden leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
-              ...
-            </div>
-            <nuxt-link to="/?p=4" class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
-              13
-            </nuxt-link>
-            <nuxt-link to="/?p=5" class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
-              14
-            </nuxt-link>
-            <nuxt-link to="/?p=6" class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
-              15
+            <nuxt-link
+              v-for="page of pageTotal"
+              :key="page"
+              :to="{path: `/?page=${page}`}"
+              class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in"
+              :class="page === nowPage ? border-t-2 : border-t-0"
+              @click.native="transitionPage"
+            >
+              {{ page }}
             </nuxt-link>
           </div>
           <div class="h-8 w-8 ml-1 flex justify-center items-center  cursor-pointer">
@@ -101,7 +88,7 @@
             </svg>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -112,11 +99,23 @@ import { Article } from '@/types'
 
 @Component
 export default class Articles extends Vue {
-    @Prop({ type: [Object, Array], required: true })
-      articles: Article[] | undefined
+    @Prop({ type: Number, required: true, default: 1 })
+      nowPage!: number
+
+    @Prop({ type: [Object, Array], required: true, default: [] })
+      articles!: Article[]
+
+    @Prop({ type: Number, required: true, default: 0 })
+      total!: number
+
+    private pageTotal : number | undefined
 
     created () {
-      console.log(this.articles)
+      this.calculatePageTotal()
+    }
+
+    calculatePageTotal () {
+      this.pageTotal = this.total / 8
     }
 }
 </script>
