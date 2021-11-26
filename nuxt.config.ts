@@ -24,6 +24,7 @@ const nuxtConfig: NuxtConfig = {
   },
   loading: { color: '#fff' },
   css: [
+    '~/node_modules/highlight.js/styles/vs2015.css'
   ],
   plugins: [
   ],
