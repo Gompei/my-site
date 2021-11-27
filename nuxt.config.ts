@@ -27,6 +27,7 @@ const nuxtConfig: NuxtConfig = {
     '~/node_modules/highlight.js/styles/vs2015.css'
   ],
   plugins: [
+    '~/plugins/tui_editor.client.ts'
   ],
   components: true,
   buildModules: [

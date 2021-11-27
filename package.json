@@ -15,6 +15,7 @@
     "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/axios": "^5.13.6",
     "@tailwindcss/typography": "^0.4.1",
+    "@toast-ui/vue-editor": "^3.1.1",
     "@types/highlight.js": "^10.1.0",
     "@types/marked": "^4.0.1",
     "core-js": "^3.19.1",
