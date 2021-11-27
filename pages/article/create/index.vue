@@ -27,7 +27,9 @@
       <h2 class="mt-2 text-sm text-gray-500">
         作成:YYYY年MM月DD日 更新:YYYY年MM月DD日
       </h2>
-      <Editor />
+      <editor
+        previewStyle="tab"
+      />
     </article>
   </div>
 </template>
