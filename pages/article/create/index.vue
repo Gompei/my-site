@@ -9,7 +9,7 @@
 
         <div class="mt-[-10%] w-1/2 mx-auto">
           <div class="relative pt-[56.25%] overflow-hidden rounded-2xl">
-            <img class="w-full h-full absolute inset-0 object-cover" :src="imgURL" alt="">
+            <img class="w-full h-full absolute inset-0 object-cover" :src="imgURL" alt="create article img">
           </div>
         </div>
       </div>
