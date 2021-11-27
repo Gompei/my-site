@@ -1,44 +1,52 @@
 <template>
-  <div class="relative container mx-auto bg-white px-4">
-    <div class="relative">
-      <input type="file" multiple class="cursor-pointer absolute block opacity-0 w-full h-full p-20 z-50" @change="upload($event)">
-      <div class="relative -mx-4 top-0 pt-[17%] overflow-hidden">
-        <img class="absolute inset-0 object-cover object-top w-full h-full filter blur" :src="imgURL" alt="">
-      </div>
+  <client-only>
+    <div class="relative container mx-auto bg-white px-4">
+      <div class="relative">
+        <input type="file" multiple class="cursor-pointer absolute block opacity-0 w-full h-full p-20 z-50" @change="upload($event)">
+        <div class="relative -mx-4 top-0 pt-[17%] overflow-hidden">
+          <img class="absolute inset-0 object-cover object-top w-full h-full filter blur" :src="imgURL" alt="">
+        </div>
 
-      <div class="mt-[-10%] w-1/2 mx-auto">
-        <div class="relative pt-[56.25%] overflow-hidden rounded-2xl">
-          <img class="w-full h-full absolute inset-0 object-cover" :src="imgURL" alt="">
+        <div class="mt-[-10%] w-1/2 mx-auto">
+          <div class="relative pt-[56.25%] overflow-hidden rounded-2xl">
+            <img class="w-full h-full absolute inset-0 object-cover" :src="imgURL" alt="">
+          </div>
         </div>
       </div>
+
+      <article class="max-w-prose mx-auto py-8">
+        <div class="mb-2">
+          <input
+            placeholder="タイトル"
+            type="text"
+            class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+          >
+        </div>
+
+        <div>
+          <input
+            placeholder="タグ,タグ,タグ"
+            type="text"
+            class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+          >
+        </div>
+
+        <div class="my-2">
+          <datepicker
+            lang="ja"
+            placeholder="作成日"
+          />
+        </div>
+
+        <div>
+          <editor
+            previewStyle="tab"
+          />
+        </div>
+      </article>
     </div>
-
-    <article class="max-w-prose mx-auto py-8">
-      <h1 class="text-2xl font-bold">
-        テストタイトル
-      </h1>
-
-      <div class="flex flex-wrap justify-starts items-center text-xs text-white font-medium">
-        <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-          #タグ
-        </span>
-      </div>
-
-      <div class="my-2">
-        <datepicker
-          lang="ja"
-          placeholder="作成日"
-        />
-      </div>
-
-      <div>
-        <editor
-          previewStyle="tab"
-        />
-      </div>
-    </article>
-  </div>
-  </div>
+    </div>
+  </client-only>
 </template>
 
 <script lang="ts">
