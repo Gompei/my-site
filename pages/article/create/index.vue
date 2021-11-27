@@ -65,7 +65,7 @@ export default class Id extends Vue {
     toastuiEditor: Editor
   }
 
-  private imgURL: string = require('@/assets/image/example.jpg')
+  private imgURL: any = require('@/assets/image/example.jpg')
 
   created () {
   }
@@ -74,7 +74,13 @@ export default class Id extends Vue {
   }
 
   upload (event: any) {
-    console.log(event.target.files)
+    const reader = new FileReader()
+    reader.readAsDataURL(event.target.files[0])
+
+    reader.onload = () => {
+      const dataUrl = reader.result
+      this.imgURL = dataUrl
+    }
   }
 }
 </script>
