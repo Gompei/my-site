@@ -39,7 +39,15 @@ const nuxtConfig: NuxtConfig = {
     '@nuxtjs/axios'
   ],
   axios: {},
-  build: {
+  build: {},
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/error/404.vue')
+      })
+    }
   }
 }
 
