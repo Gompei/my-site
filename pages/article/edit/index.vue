@@ -2,9 +2,9 @@
   <client-only>
     <div class="relative container mx-auto bg-white px-4">
       <div class="relative">
-        <input type="file" multiple class="cursor-pointer absolute block opacity-0 w-full h-full p-20 z-50" @change="upload($event)">
+        <input type="file" multiple class="cursor-pointer absolute block opacity-0 w-full h-full p-20 z-50" @change="changeImgURL($event)">
         <div class="relative -mx-4 top-0 pt-[17%] overflow-hidden">
-          <img class="absolute inset-0 object-cover object-top w-full h-full filter blur" :src="imgURL" alt="">
+          <img class="absolute inset-0 object-cover object-top w-full h-full filter blur" :src="imgURL" alt="create article img">
         </div>
 
         <div class="mt-[-10%] w-1/2 mx-auto">
@@ -17,7 +17,8 @@
       <article class="max-w-prose mx-auto py-8">
         <div class="mb-2">
           <input
-            placeholder="タイトル"
+            v-model="title"
+            placeholder="タイトル,サブタイトル"
             type="text"
             class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
           >
@@ -25,6 +26,7 @@
 
         <div>
           <input
+            v-model="tag"
             placeholder="タグ,タグ,タグ"
             type="text"
             class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
@@ -32,16 +34,11 @@
         </div>
 
         <div class="my-2">
-          <input
-            class="rounded-lg border-2"
-            type="date"
-          >
+          <input class="rounded-lg border-2" type="date">
         </div>
 
         <div>
-          <editor
-            previewStyle="tab"
-          />
+          <editor previewStyle="tab" />
         </div>
 
         <div>
@@ -57,29 +54,21 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import { Editor } from '@toast-ui/vue-editor'
 
 @Component
-export default class Id extends Vue {
-  $refs!: {
-    toastuiEditor: Editor
-  }
-
+export default class Create extends Vue {
   private imgURL: any = require('@/assets/image/example.jpg')
+  private title: string = ''
+  private subTitle = ''
+  private tag: string = ''
+  private date: any = ''
 
-  created () {
-  }
-
-  mounted () {
-  }
-
-  upload (event: any) {
+  changeImgURL (event: any) {
     const reader = new FileReader()
     reader.readAsDataURL(event.target.files[0])
 
     reader.onload = () => {
-      const dataUrl = reader.result
-      this.imgURL = dataUrl
+      this.imgURL = reader.result
     }
   }
 }
