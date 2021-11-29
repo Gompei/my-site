@@ -55,6 +55,7 @@ const nuxtConfig: NuxtConfig = {
   },
   build: {},
   router: {
+    middleware: 'login',
     extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
