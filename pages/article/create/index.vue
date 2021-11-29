@@ -32,10 +32,10 @@
         </div>
 
         <div class="my-2">
-          <datepicker
-            lang="ja"
-            placeholder="作成日"
-          />
+          <input
+            class="rounded-lg border-2"
+            type="date"
+          >
         </div>
 
         <div>
