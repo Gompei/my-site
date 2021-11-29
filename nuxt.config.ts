@@ -5,8 +5,7 @@ const nuxtConfig: NuxtConfig = {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000/'
   },
   server: {
-    port: '8080',
-    host: '0.0.0.0'
+    port: '8080'
   },
   target: 'static',
   head: {
