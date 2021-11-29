@@ -24,7 +24,7 @@
           target="_blank"
           class="block w-8 h-8 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
         >
-          <img class="object-cover object-center w-full h-full rounded-full" src="@/assets/image/gihtub_icon.webp">
+          <img class="object-cover object-center w-full h-full rounded-full" src="@/assets/image/gihtub_icon.webp" alt="github icon">
         </a>
       </div>
     </div>
