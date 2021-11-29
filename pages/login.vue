@@ -14,18 +14,15 @@
             <span class="inline-block mr-2">Login</span>
           </button>
         </div>
-        <!-- TODO: 今後実装 -->
-        <!-- <div class="p-5">
-          <div class="grid grid-cols-2 gap-1">
-            <button type="button" class="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center inline-block">
-              Google
-            </button>
-            <button type="button" class="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center inline-block">
-              Github
-            </button>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class Login extends Vue {
+}
+</script>
