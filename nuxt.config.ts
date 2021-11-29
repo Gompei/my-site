@@ -1,6 +1,13 @@
 import { NuxtConfig } from '@nuxt/types'
 
 const nuxtConfig: NuxtConfig = {
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000/'
+  },
+  server: {
+    port: '8080',
+    host: '0.0.0.0'
+  },
   target: 'static',
   head: {
     title: 'Gompei Blog',
@@ -38,7 +45,9 @@ const nuxtConfig: NuxtConfig = {
   modules: [
     '@nuxtjs/axios'
   ],
-  axios: {},
+  axios: {
+    baseURL: process.env.baseUrl
+  },
   build: {},
   router: {
     extendRoutes (routes, resolve) {
