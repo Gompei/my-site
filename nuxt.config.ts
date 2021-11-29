@@ -24,10 +24,10 @@ const nuxtConfig: NuxtConfig = {
   },
   loading: { color: '#fff' },
   css: [
-    '~/node_modules/highlight.js/styles/vs2015.css'
+    '@/node_modules/highlight.js/styles/vs2015.css'
   ],
   plugins: [
-    '~/plugins/tui_editor.client.ts'
+    '@/plugins/tuiEditor.ts'
   ],
   components: true,
   buildModules: [
