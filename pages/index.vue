@@ -10,7 +10,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import { Context } from '@nuxt/types'
 import { Article } from '@/types'
 
 @Component
@@ -19,7 +18,7 @@ export default class Index extends Vue {
   private total: number = 0
   private nowPage: number = 1
 
-  asyncData ({ $config }: Context) {
+  asyncData () {
     return {}
   }
 }
