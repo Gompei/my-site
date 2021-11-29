@@ -78,4 +78,4 @@ jobs:
 
       # TODO: 今後はcliでidを取得するように修正
       - name: Delete cache  
-        run: aws cloudfront create-invalidation --distribution-id EJIJE5QVC65BL --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E3XCBEJRWV3GV --paths "/*"
