@@ -4,6 +4,12 @@ const nuxtConfig: NuxtConfig = {
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000/'
   },
+  privateRuntimeConfig: {
+    apiKey: process.env.API_KEY
+  },
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? process.env.API_KEY : undefined
+  },
   server: {
     port: '8080'
   },
