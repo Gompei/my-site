@@ -10,7 +10,7 @@
         </p>
       </div>
       <div>
-        <img src="~/assets/image/error_icon.png" class="error-image" alt="error icon">
+        <img src="@/assets/image/error_icon.webp" class="error-image" alt="error icon">
       </div>
     </div>
   </div>

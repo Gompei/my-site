@@ -57,7 +57,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class Create extends Vue {
-  private imgURL: any = require('@/assets/image/example.jpg')
+  private imgURL: any = require('@/assets/image/example.webp')
   private title: string = ''
   private subTitle = ''
   private tag: string = ''

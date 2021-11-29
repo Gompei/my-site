@@ -3,7 +3,7 @@
     <!-- introduction -->
     <div class="container px-5 pt-5 mx-auto">
       <div class="text-center mb-2">
-        <img src="~/assets/image/icon.png" class="icon-image">
+        <img src="@/assets/image/icon.webp" class="icon-image">
         <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
           Gompei
         </h1>
