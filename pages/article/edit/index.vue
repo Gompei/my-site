@@ -43,7 +43,7 @@
 
         <div>
           <button class="mt-2 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
-            作成
+            PUT
           </button>
         </div>
       </article>
