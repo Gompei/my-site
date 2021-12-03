@@ -9,7 +9,7 @@ export interface Repositories {
 export default (context: Context, inject: Inject) => {
   const repositoryWithAxios = createRepositories(context.$axios)
   const repositories = {
-    clients: repositoryWithAxios('clients')
+    clients: repositoryWithAxios('article')
   }
   inject('repositories', repositories)
 }

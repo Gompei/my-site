@@ -11,8 +11,8 @@ export interface CRUDActions {
 }
 
 export default (client: NuxtAxiosInstance) => (resource: string) => ({
-  list<T> (query?: string) {
-    return client.get<T>(`api/${resource}/?${query}`)
+  list<T> () {
+    return client.get<T>(`api/${resource}/list`)
   },
   get<T> (id: number) {
     return client.get<T>(`api/${resource}/${id}`)
