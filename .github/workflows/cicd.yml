@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
 
 jobs:
   ci:
@@ -65,6 +60,12 @@ jobs:
 
       - name: Generate Code 📦
         run: npm run generate
+        env:
+          NODE_ENV: production
+          BASE_URL: https://${{secrets.MY_SITE_DOMAIN}}
+          API_KEY: ${{secrets.API_KEY}}
+          USER_POOL_ID: ${{secrets.USER_POOL_ID}}
+          CLIENT_ID: ${{secrets.CLIENT_ID}}
 
       - name: Configure AWS Credentials 👀
         uses: aws-actions/configure-aws-credentials@master
