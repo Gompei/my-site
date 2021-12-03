@@ -69,13 +69,12 @@ jobs:
       - name: Configure AWS Credentials 👀
         uses: aws-actions/configure-aws-credentials@master
         with:
-          aws-region: us-east-1
+          aws-region: ap-northeast-1
           role-to-assume: ${{secrets.AWS_IAM_TO_ASSUME}}
           role-session-name: my-site-front-github-actions-session
       
       - name: Deploy Site
         run: aws s3 cp dist s3://${{secrets.MY_SITE_DOMAIN}}/ --recursive
 
-      # TODO: 今後はcliでidを取得するように修正
       - name: Delete cache  
-        run: aws cloudfront create-invalidation --distribution-id E3XCBEJRWV3GV --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id $(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[0]=='${{secrets.MY_SITE_DOMAIN}}'].Id" --output text) --paths "/*"
