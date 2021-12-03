@@ -52,9 +52,5 @@ import { Article } from '@/types'
 export default class Articles extends Vue {
     @Prop({ type: [Object, Array], required: true, default: [] })
       articles!: Article[]
-
-    mounted () {
-      console.log(this.articles)
-    }
 }
 </script>
