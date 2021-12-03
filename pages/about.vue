@@ -1,6 +1,5 @@
 <template>
   <section class="text-gray-600 body-font">
-    <!-- introduction -->
     <div class="container px-5 pt-5 mx-auto">
       <div class="text-center mb-2">
         <img src="@/assets/image/icon.webp" class="icon-image">
@@ -12,7 +11,6 @@
         </p>
       </div>
     </div>
-    <!-- OSS -->
     <div>
       <div class="container pt-5 mx-auto">
         <div class="text-center">
@@ -32,7 +30,6 @@
         </div>
       </div>
     </div>
-    <!-- WEB APP -->
     <div>
       <div class="container pt-5 mx-auto">
         <div class="text-center">
@@ -52,7 +49,6 @@
         </div>
       </div>
     </div>
-    <!-- qualification -->
     <div>
       <div class="container pt-5 mx-auto">
         <div class="text-center">
