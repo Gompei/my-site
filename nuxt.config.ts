@@ -51,7 +51,12 @@ const nuxtConfig: NuxtConfig = {
     '@nuxtjs/axios'
   ],
   axios: {
-    baseURL: process.env.baseUrl
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    headers: {
+      common: {
+        'x-api-key': process.env.API_KEY || 'dummy-api-key'
+      }
+    }
   },
   build: {},
   router: {
