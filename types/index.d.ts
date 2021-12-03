@@ -7,7 +7,7 @@ export class Article {
   title?: string
   subTitle?: string
   imageURL?: string
-  categoryTag?: string
+  categoryTag?: string[]
   content?: string
   createTimeStamp?: string
   updateTimeStamp?: string
