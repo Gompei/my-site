@@ -12,8 +12,8 @@ const nuxtConfig: NuxtConfig = {
     clientId: process.env.CLIENT_ID || ''
   },
   publicRuntimeConfig: {
-    userPoolId: process.env.NODE_ENV !== 'production' ? process.env.USER_POOL_ID : '',
-    clientId: process.env.NODE_ENV !== 'production' ? process.env.CLIENT_ID : ''
+    userPoolId: process.env.USER_POOL_ID || '',
+    clientId: process.env.CLIENT_ID || ''
   },
   target: 'static',
   head: {

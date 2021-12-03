@@ -43,6 +43,7 @@ export default class Login extends Vue {
   private loading: boolean = false
 
   private login () {
+    console.log('ログイン処理')
     this.loading = true
 
     const cognitoUser = new CognitoUser({ Username: this.userID, Pool: this.$cognito })

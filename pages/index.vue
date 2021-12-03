@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ articles }}
     <Articles
       :articles="articles"
     />
