@@ -1,17 +1,19 @@
 import { NuxtConfig } from '@nuxt/types'
 
 const nuxtConfig: NuxtConfig = {
-  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000/'
-  },
-  privateRuntimeConfig: {
-    apiKey: process.env.API_KEY
-  },
-  publicRuntimeConfig: {
-    apiKey: process.env.NODE_ENV !== 'production' ? process.env.API_KEY : undefined
-  },
   server: {
     port: '8080'
+  },
+  generate: {
+    fallback: 'error.html'
+  },
+  privateRuntimeConfig: {
+    userPoolId: process.env.USER_POOL_ID || '',
+    clientId: process.env.CLIENT_ID || ''
+  },
+  publicRuntimeConfig: {
+    userPoolId: process.env.NODE_ENV !== 'production' ? process.env.USER_POOL_ID : '',
+    clientId: process.env.NODE_ENV !== 'production' ? process.env.CLIENT_ID : ''
   },
   target: 'static',
   head: {
@@ -39,6 +41,7 @@ const nuxtConfig: NuxtConfig = {
     '@/node_modules/highlight.js/styles/vs2015.css'
   ],
   plugins: [
+    '@/plugins/cognito.ts',
     '@/plugins/repositoryFactory.ts',
     '@/plugins/tuiEditor.client.ts'
   ],
