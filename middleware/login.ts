@@ -5,7 +5,7 @@ const loginList = ['/article/edit']
 
 const login: Middleware = (context: Context) => {
   if (loginList.includes(context.route.path)) {
-    const cognitoUser: CognitoUser | null = context.app.context.$cognitoUserPool.getCurrentUser()
+    const cognitoUser: CognitoUser | null = context.app.context.$cognito.getCurrentUser()
 
     if (cognitoUser !== null) {
       cognitoUser.getSession((err: Error | null, _session : CognitoUserSession) => {
