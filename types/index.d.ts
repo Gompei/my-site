@@ -3,7 +3,7 @@ export interface HTMLEvent<T extends EventTarget> extends Event {
 }
 
 export class Article {
-  id: number
+  id?: number
   title?: string
   subTitle?: string
   imageURL?: string
