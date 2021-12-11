@@ -7,10 +7,6 @@ const nuxtConfig: NuxtConfig = {
   generate: {
     fallback: 'error.html'
   },
-  privateRuntimeConfig: {
-    userPoolId: process.env.USER_POOL_ID || '',
-    clientId: process.env.CLIENT_ID || ''
-  },
   publicRuntimeConfig: {
     userPoolId: process.env.USER_POOL_ID || '',
     clientId: process.env.CLIENT_ID || ''
