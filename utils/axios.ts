@@ -40,7 +40,9 @@ const settingsAxios = (context: Context, axios: NuxtAxiosInstance): NuxtAxiosIns
   axios.setHeader('x-api-key', context.$config.apiKey)
 
   axios.interceptors.request.use((request) => {
-    request.data = toUnderscoreCaseObject(request.data)
+    if (request.method === 'put') {
+      request.data = toUnderscoreCaseObject(request.data)
+    }
     return request
   })
 
