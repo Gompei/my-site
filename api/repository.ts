@@ -8,6 +8,7 @@ export interface CRUDActions {
     get<T>(id: number): Promise<AxiosResponse<T>>
     put<T>(payload: any): Promise<AxiosResponse<T>>
     delete<T>(id: number): Promise<AxiosResponse<T>>
+    test<T>(): Promise<AxiosResponse<T>>
 }
 
 export default (client: NuxtAxiosInstance) => (resource: string) => ({
@@ -22,5 +23,8 @@ export default (client: NuxtAxiosInstance) => (resource: string) => ({
   },
   delete (id?: number) {
     return client.delete(`api/${resource}/${id}`)
+  },
+  test () {
+    return client.get('/api/test')
   }
 })
