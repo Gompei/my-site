@@ -82,7 +82,7 @@ export default class Create extends Vue {
     id: 0,
     title: '',
     subTitle: '',
-    imageURL: '',
+    imageUrl: '',
     categoryTag: [],
     content: '',
     createTimeStamp: moment().format('YYYY-MM-DD'),
@@ -106,10 +106,9 @@ export default class Create extends Vue {
   }
 
   async putArticleData () {
-    // this.article.categoryTag = this.tag.split(',')
-    // const response = await this.$repositories.clients.put(this.article)
-    const response = await this.$repositories.clients.test()
-    console.log(response)
+    this.article.categoryTag = this.tag.split(',')
+    await this.$repositories.clients.put(this.article)
+    alert('記事保存成功')
   }
 }
 </script>
