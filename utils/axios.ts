@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/named
 import { NuxtAxiosInstance } from '@nuxtjs/axios'
+import { Context } from '@nuxt/types'
 
 function toCamelCase (str: string): string {
   return str.split('_').map(function (word, index) {
@@ -34,7 +35,10 @@ function toUnderscoreCaseObject (obj: any) {
   return result
 }
 
-const settingsAxios = (axios: NuxtAxiosInstance): NuxtAxiosInstance => {
+const settingsAxios = (context: Context, axios: NuxtAxiosInstance): NuxtAxiosInstance => {
+  axios.setBaseURL(context.$config.baseURL)
+  axios.setHeader('x-api-key', context.$config.apiKey)
+
   axios.interceptors.request.use((request) => {
     request.data = toUnderscoreCaseObject(request.data)
     return request
@@ -51,6 +55,11 @@ const settingsAxios = (axios: NuxtAxiosInstance): NuxtAxiosInstance => {
       }
     }
     return response
+  })
+
+  axios.onError((error) => {
+    console.log(error)
+    context.redirect('/error/500.vue')
   })
 
   return axios

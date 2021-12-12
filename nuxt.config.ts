@@ -9,7 +9,10 @@ const nuxtConfig: NuxtConfig = {
   },
   publicRuntimeConfig: {
     userPoolId: process.env.USER_POOL_ID || '',
-    clientId: process.env.CLIENT_ID || ''
+    clientId: process.env.CLIENT_ID || '',
+    baseURL: process.env.BASE_URL || '',
+    // 別にみられて良いので記載。(更新・削除については別途認証が必要な為)
+    apiKey: process.env.API_KEY || ''
   },
   target: 'static',
   head: {
@@ -49,15 +52,6 @@ const nuxtConfig: NuxtConfig = {
   modules: [
     '@nuxtjs/axios'
   ],
-  axios: {
-    baseURL: process.env.BASE_URL || 'http://localhost:3000',
-    headers: {
-      common: {
-        'x-api-key': process.env.API_KEY || 'dummy-api-key'
-      }
-    }
-  },
-  build: {},
   router: {
     middleware: 'login',
     extendRoutes (routes, resolve) {

@@ -24,13 +24,12 @@
                   <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
                     <span v-for="(tag, j) in article.categoryTag" :key="j" class="m-1 px-2 py-1 rounded bg-indigo-500">
                       #{{ tag }}
-                      {{ j }}
                     </span>
                   </div>
                   <div class="flex items-center mt-2">
                     <div class="pl-3">
                       <div class="font-medium">
-                        {{ article.create_time_stamp }}
+                        作成日:{{ article.createTimeStamp }}
                       </div>
                     </div>
                   </div>
