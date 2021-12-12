@@ -1,49 +1,50 @@
 <template>
-  <div class="relative container mx-auto bg-white px-4">
-    <div class="relative -mx-4 top-0 pt-[17%] overflow-hidden">
-      <img class="absolute inset-0 object-cover object-top w-full h-full filter blur" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
-    </div>
-
-    <div class="mt-[-10%] w-1/2 mx-auto">
-      <div class="relative pt-[56.25%] overflow-hidden rounded-2xl">
-        <img class="w-full h-full absolute inset-0 object-cover" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="">
+  <div>
+    <div v-if="loading" class="flex items-center justify-center w-full h-full mb-5">
+      <div class="flex justify-center items-center space-x-1 text-sm text-gray-700">
+        <svg fill="none" class="w-6 h-6 animate-spin" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path
+            clip-rule="evenodd"
+            d="M15.165 8.53a.5.5 0 01-.404.58A7 7 0 1023 16a.5.5 0 011 0 8 8 0 11-9.416-7.874.5.5 0 01.58.404z"
+            fill="currentColor"
+            fill-rule="evenodd"
+          />
+        </svg>
+        <div>Loading ...</div>
       </div>
     </div>
-
-    <article class="max-w-prose mx-auto py-8">
-      <h1 class="text-2xl font-bold">
-        テストタイトル
-      </h1>
-
-      <div class="flex flex-wrap justify-starts items-center text-xs text-white font-medium">
-        <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-          #タグ
-        </span>
+    <div v-else class="relative container mx-auto bg-white px-4">
+      <div class="relative -mx-4 top-0 pt-[17%] overflow-hidden">
+        <img class="absolute inset-0 object-cover object-top w-full h-full filter blur" :src="article.imageUrl" alt="article image">
       </div>
 
-      <h2 class="mt-2 text-sm text-gray-500">
-        作成:YYYY年MM月DD日 更新:YYYY年MM月DD日
-      </h2>
-      <p class="mt-6">
-        これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。
-      </p>
-      <p class="mt-6">
-        これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。
-      </p>
-      <p class="mt-6">
-        これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。
-      </p>
-      <p class="mt-6">
-        これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。これはテスト。
-      </p>
+      <div class="mt-[-10%] w-1/2 mx-auto">
+        <div class="relative pt-[56.25%] overflow-hidden rounded-2xl">
+          <img class="w-full h-full absolute inset-0 object-cover" :src="article.imageUrl" alt="article image">
+        </div>
+      </div>
 
-      <!-- max-w-prose -->
-      <!-- <div class="mt-6 prose prose-sm sm:prose break-all">
-        <div v-html="post" />
-      </div> -->
-    </article>
+      <article class="max-w-prose mx-auto py-8">
+        <h1 class="text-2xl font-bold">
+          テストタイトル
+        </h1>
 
-    <div>
+        <div class="flex flex-wrap justify-starts items-center text-xs text-white font-medium">
+          <span class="m-1 px-2 py-1 rounded bg-indigo-500">
+            #タグ
+          </span>
+        </div>
+
+        <h2 class="mt-2 text-sm text-gray-500">
+          作成:YYYY年MM月DD日 更新:YYYY年MM月DD日
+        </h2>
+
+        <div class="mt-6 prose prose-sm sm:prose break-all">
+          <div v-html="markdown" />
+        </div>
+      </article>
+
+    <!-- <div>
       <div class="container pt-5 w-1/2 mx-auto">
         <div class="text-center">
           <p class="sm:text-xl text-2xl font-medium text-gray-900">
@@ -114,6 +115,7 @@
           </div>
         </div>
       </div>
+    </div> -->
     </div>
   </div>
 </template>
@@ -122,78 +124,34 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import { marked } from 'marked'
 import hljs from 'highlight.js'
+import { Article } from '@/types'
 
 @Component
 export default class Id extends Vue {
-  private markdown: string = `
-# これ見出し
-By default, Tailwind removes all of the default browser styling from paragraphs,
-
-For more, [read the documentation](https://github.com/tailwindcss/typography/blob/master/README.md).
-
-## AAA
-
-### AAA
-
-\`\`\`ruby
-puts 'Hello World'
-\`\`\`
-
-\`\`\`html
-<article class="prose">
-  <h1>Garlic bread with cheese: What the science tells us</h1>
-  <p>
-    For years parents have espoused the health benefits of eating garlic bread with cheese to their
-    children, with the food earning such an iconic status in our culture that kids will often dress
-    up as warm, cheesy loaf for Halloween.
-  </p>
-  <p>
-    But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-    springing up around the country.
-  </p>
-  <!-- ... -->
-</article>
-\`\`\`
----
-
-\`\`\`js
-module.exports = {
-  purge: [],
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [],
-}
-\`\`\`
-
-## What to expect from here on out
-
-It's important to cover all of these use cases for a few reasons:
-
-1. We want everything to look good out of the box.
-2. Really just the first reason, that's the whole point of the plugin.
-3. Here's a third pretend reason though a list with three items looks more realistic than a list with two items.
-
-### Typography should be easy
-
-> Typography is pretty important if you don't want your stuff to look like trash. Make it good then it won't be bad.
-  `
-
-  private post: string = ''
+  private article: Article = {}
+  private markdown: string = ''
+  private loading: boolean = true
 
   created () {
     marked.setOptions({
       langPrefix: '',
       highlight (code, lang) {
         return hljs.highlightAuto(code, [lang]).value
-      },
-      sanitize: true
+      }
     })
+
+    if (this.$route.params.id !== undefined) {
+      this.getArticleData(this.$route.params.id.toString())
+    } else {
+      this.$router.push('/')
+    }
   }
 
-  mounted () {
-    this.post = marked(this.markdown)
+  async getArticleData (id: string) {
+    const response = await this.$repositories.clients.get(id)
+    this.article = response.data
+    this.markdown = marked(this.article.content === undefined ? '' : this.article.content)
+    this.loading = false
   }
 }
 </script>

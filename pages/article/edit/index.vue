@@ -22,7 +22,7 @@
 
         <div class="mb-2">
           <input
-            v-model="article.imageURL"
+            v-model="article.imageUrl"
             placeholder="イメージ画像URL"
             type="text"
             class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
@@ -57,7 +57,7 @@
         </div>
 
         <div>
-          <editor previewStyle="tab" />
+          <editor ref="toastuiEditor" previewStyle="tab" :initialValue="article.content" />
         </div>
 
         <div>
@@ -74,10 +74,15 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import moment from 'moment'
+import { Editor } from '@toast-ui/vue-editor'
 import { Article } from '@/types'
 
 @Component
 export default class Create extends Vue {
+  $refs!: {
+    toastuiEditor: Editor
+  }
+
   private article: Article = {
     id: 0,
     title: '',
@@ -99,16 +104,19 @@ export default class Create extends Vue {
     }
   }
 
-  async getArticleData (id: string) {
-    const i = parseInt(id)
-    const response = await this.$repositories.clients.get(i)
-    console.log(response)
+  async getArticleData (_id: string) {
+    // const response = await this.$repositories.clients.get(id)
   }
 
   async putArticleData () {
     this.article.categoryTag = this.tag.split(',')
+    this.article.content = this.getMarkdown()
     await this.$repositories.clients.put(this.article)
     alert('記事保存成功')
+  }
+
+  private getMarkdown () :string {
+    return this.$refs.toastuiEditor.invoke('getMarkdown')
   }
 }
 </script>
