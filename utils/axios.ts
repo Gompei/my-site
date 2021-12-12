@@ -42,7 +42,13 @@ const settingsAxios = (axios: NuxtAxiosInstance): NuxtAxiosInstance => {
 
   axios.interceptors.response.use((response) => {
     if (response.headers['content-type'] === 'application/json' && response.config.method === 'get') {
-      response.data = toCamelCaseObject(response.data)
+      if (Array.isArray(response.data)) {
+        for (let i = 0; i < response.data.length; i++) {
+          response.data[i] = toCamelCaseObject(response.data[i])
+        }
+      } else {
+        response.data = toCamelCaseObject(response.data)
+      }
     }
     return response
   })
