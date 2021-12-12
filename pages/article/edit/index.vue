@@ -1,24 +1,29 @@
 <template>
   <client-only>
     <div class="relative container mx-auto bg-white px-4">
-      <div class="relative">
-        <input type="file" multiple class="cursor-pointer absolute block opacity-0 w-full h-full p-20 z-50" @change="changeImgURL($event)">
-        <div class="relative -mx-4 top-0 pt-[17%] overflow-hidden">
-          <img class="absolute inset-0 object-cover object-top w-full h-full filter blur" :src="imgURL" alt="create article img">
-        </div>
-
-        <div class="mt-[-10%] w-1/2 mx-auto">
-          <div class="relative pt-[56.25%] overflow-hidden rounded-2xl">
-            <img class="w-full h-full absolute inset-0 object-cover" :src="imgURL" alt="create article img">
-          </div>
-        </div>
-      </div>
-
       <article class="max-w-prose mx-auto py-8">
         <div class="mb-2">
           <input
-            v-model="title"
-            placeholder="タイトル,サブタイトル"
+            v-model="article.title"
+            placeholder="タイトル"
+            type="text"
+            class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+          >
+        </div>
+
+        <div class="mb-2">
+          <input
+            v-model="article.subTitle"
+            placeholder="サブタイトル"
+            type="text"
+            class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+          >
+        </div>
+
+        <div class="mb-2">
+          <input
+            v-model="article.imageURL"
+            placeholder="イメージ画像URL"
             type="text"
             class="text-md block px-3 py-2 rounded-lg w-full border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
           >
@@ -34,7 +39,21 @@
         </div>
 
         <div class="my-2">
-          <input class="rounded-lg border-2" type="date">
+          作:
+          <input v-model="article.createTimeStamp" class="rounded-lg border-2" type="date">
+          更:
+          <input v-model="article.updateTimeStamp" class="rounded-lg border-2" type="date">
+        </div>
+
+        <div>
+          <label>
+            公:
+            <input v-model="article.publicFlg" type="checkbox">
+          </label>
+          <label>
+            削:
+            <input v-model="article.deleteFlg" type="checkbox">
+          </label>
         </div>
 
         <div>
@@ -42,7 +61,7 @@
         </div>
 
         <div>
-          <button class="mt-2 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
+          <button class="mt-2 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" @click="putArticleData">
             PUT
           </button>
         </div>
@@ -54,22 +73,43 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import moment from 'moment'
+import { Article } from '@/types'
 
 @Component
 export default class Create extends Vue {
-  private imgURL: any = require('@/assets/image/example.webp')
-  private title: string = ''
-  private subTitle = ''
+  private article: Article = {
+    id: 0,
+    title: '',
+    subTitle: '',
+    imageURL: '',
+    categoryTag: [],
+    content: '',
+    createTimeStamp: moment().format('YYYY-MM-DD'),
+    updateTimeStamp: moment().format('YYYY-MM-DD'),
+    publicFlg: true,
+    deleteFlg: false
+  }
+
   private tag: string = ''
-  private date: any = ''
 
-  changeImgURL (event: any) {
-    const reader = new FileReader()
-    reader.readAsDataURL(event.target.files[0])
-
-    reader.onload = () => {
-      this.imgURL = reader.result
+  created () {
+    if (this.$route.query.id !== undefined) {
+      this.getArticleData(this.$route.query.id.toString())
     }
+  }
+
+  async getArticleData (id: string) {
+    const i = parseInt(id)
+    const response = await this.$repositories.clients.get(i)
+    console.log(response)
+  }
+
+  async putArticleData () {
+    // this.article.categoryTag = this.tag.split(',')
+    // const response = await this.$repositories.clients.put(this.article)
+    const response = await this.$repositories.clients.test()
+    console.log(response)
   }
 }
 </script>
