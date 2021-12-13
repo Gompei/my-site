@@ -13,23 +13,24 @@
           <div v-for="(article, i) in articles" :key="i" class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-2">
               <nuxt-link :to="{ name: 'article-id', params: { id: article.id }}">
-                <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
-                <div class="bg-white p-4">
-                  <p class="text-indigo-500 text-2xl font-medium">
+                <img alt="blog photo" :src="article.imageUrl" class="max-h-40 w-full object-cover">
+                <div class="bg-white px-4 py-3">
+                  <p class="text-indigo-500 text-xl font-medium">
                     {{ article.title }}
                   </p>
                   <p class="text-gray-800 text-sm font-medium mb-2">
                     {{ article.subTitle }}
                   </p>
-                  <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
-                    <span v-for="(tag, j) in article.categoryTag" :key="j" class="m-1 px-2 py-1 rounded bg-indigo-500">
+                  <div class="flex flex-wrap justify-starts items-center py-2 border-b-2 text-xs text-white font-medium">
+                    <span v-for="(tag, j) in article.categoryTag" :key="j" class="text-xs m-1 px-2 py-1 rounded bg-indigo-500">
                       #{{ tag }}
                     </span>
                   </div>
                   <div class="flex items-center mt-2">
-                    <div class="pl-3">
-                      <div class="font-medium">
-                        作成日:{{ article.createTimeStamp }}
+                    <div class="pl-1">
+                      <div class="text-xs font-medium">
+                        作成日:{{ article.createTimeStamp }}&nbsp;
+                        更新日:{{ article.updateTimeStamp }}
                       </div>
                     </div>
                   </div>
