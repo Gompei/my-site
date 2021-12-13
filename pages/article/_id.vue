@@ -150,6 +150,11 @@ export default class Id extends Vue {
 
   async getArticleData (id: string) {
     const response = await this.$repositories.clients.get(id)
+    if (response.data.id === undefined || response.data.id === 0) {
+      this.loading = false
+      this.$router.push('error/404')
+    }
+
     this.article = response.data
     this.markdown = marked(this.article.content === undefined ? '' : this.article.content)
     this.loading = false
