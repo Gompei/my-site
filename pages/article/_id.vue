@@ -26,17 +26,18 @@
 
       <article class="max-w-prose mx-auto py-8">
         <h1 class="text-2xl font-bold">
-          テストタイトル
+          {{ article.title }}
         </h1>
 
-        <div class="flex flex-wrap justify-starts items-center text-xs text-white font-medium">
-          <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-            #タグ
+        <div class="flex flex-wrap justify-starts items-center py-2 border-b-2 text-xs text-white font-medium">
+          <span v-for="(tag, j) in article.categoryTag" :key="j" class="text-xs m-1 px-2 py-1 rounded bg-indigo-500">
+            #{{ tag }}
           </span>
         </div>
 
         <h2 class="mt-2 text-sm text-gray-500">
-          作成:YYYY年MM月DD日 更新:YYYY年MM月DD日
+          作成日:{{ article.createTimeStamp }}&nbsp;
+          更新日:{{ article.updateTimeStamp }}
         </h2>
 
         <div class="mt-6 prose prose-sm sm:prose break-all">
