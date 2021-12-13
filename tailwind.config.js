@@ -12,7 +12,14 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            overflowX: 'visible'
+            'h1,h2,h3,h4': {
+              marginTop: '1em',
+              marginBottom: '1em'
+            },
+            p: {
+              marginTop: '0.2em',
+              marginBottom: '0.2em'
+            }
           }
         }
       }
