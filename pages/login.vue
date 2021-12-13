@@ -55,9 +55,8 @@ export default class Login extends Vue {
         this.loading = false
         this.$router.push('/')
       },
-      onFailure: (err: any) => {
+      onFailure: (_err: any) => {
         this.loading = false
-        console.log(err)
       },
       newPasswordRequired (_userAttributes:any, _requiredAttributes: any) {
         // 本当はよろしくない処理(良い子は真似しちゃ駄目)
