@@ -59,8 +59,7 @@ const settingsAxios = (context: Context, axios: NuxtAxiosInstance): NuxtAxiosIns
     return response
   })
 
-  axios.onError((error) => {
-    console.log(error)
+  axios.onError((_error) => {
     context.redirect('/error/500.vue')
   })
 
