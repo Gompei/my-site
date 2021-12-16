@@ -11,7 +11,7 @@ const nuxtConfig: NuxtConfig = {
     userPoolId: process.env.USER_POOL_ID || '',
     clientId: process.env.CLIENT_ID || '',
     baseURL: process.env.BASE_URL || '',
-    // 別にみられて良いので記載。(更新・削除については別途認証が必要な為)
+    // 別にみられて良いので記載
     apiKey: process.env.API_KEY || ''
   },
   target: 'static',
@@ -40,7 +40,6 @@ const nuxtConfig: NuxtConfig = {
     '@/node_modules/highlight.js/styles/vs2015.css'
   ],
   plugins: [
-    '@/plugins/cognito.ts',
     '@/plugins/repositoryFactory.ts',
     '@/plugins/tuiEditor.client.ts'
   ],
@@ -53,7 +52,6 @@ const nuxtConfig: NuxtConfig = {
     '@nuxtjs/axios'
   ],
   router: {
-    middleware: 'login',
     extendRoutes (routes, resolve) {
       routes.push({
         name: 'custom',
