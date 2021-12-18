@@ -10,7 +10,7 @@
         </p>
       </div>
       <div>
-        <img src="@/assets/image/error_icon.webp" class="error-image" alt="error icon">
+        <img src="https://gom60.com/image/utile/error_icon.webp" class="error-image" alt="error icon">
       </div>
     </div>
   </div>

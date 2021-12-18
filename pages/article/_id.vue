@@ -2,15 +2,8 @@
   <div>
     <div v-if="loading" class="flex items-center justify-center w-full h-full mb-5">
       <div class="flex justify-center items-center space-x-1 text-sm text-gray-700">
-        <svg fill="none" class="w-6 h-6 animate-spin" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <path
-            clip-rule="evenodd"
-            d="M15.165 8.53a.5.5 0 01-.404.58A7 7 0 1023 16a.5.5 0 011 0 8 8 0 11-9.416-7.874.5.5 0 01.58.404z"
-            fill="currentColor"
-            fill-rule="evenodd"
-          />
-        </svg>
-        <div>Loading ...</div>
+        <!-- https://hiyokoyarou.com/about/#kiyaku -->
+        <img src="https://gom60.com/image/utile/nanimoshitenai.gif" width="360px">
       </div>
     </div>
     <div v-else class="relative container mx-auto bg-white px-4">
@@ -141,11 +134,11 @@ export default class Id extends Vue {
       }
     })
 
-    if (this.$route.params.id !== undefined) {
-      this.getArticleData(this.$route.params.id.toString())
-    } else {
-      this.$router.push('/')
-    }
+    // if (this.$route.params.id !== undefined) {
+    //   this.getArticleData(this.$route.params.id.toString())
+    // } else {
+    //   this.$router.push('/')
+    // }
   }
 
   async getArticleData (id: string) {

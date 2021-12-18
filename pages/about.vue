@@ -2,7 +2,7 @@
   <section class="text-gray-600 body-font">
     <div class="container px-5 pt-5 mx-auto">
       <div class="text-center mb-2">
-        <img src="@/assets/image/icon.webp" class="icon-image">
+        <img src="https://gom60.com/image/utile/icon.webp" class="icon-image">
         <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
           Gompei
         </h1>
@@ -22,7 +22,7 @@
           <div class="w-28 line rounded-full bg-indigo-500 inline-flex" />
         </div>
         <div class="flex justify-center">
-          <div class="mt-4">
+          <div class="mt-5">
             <!-- https://github.com/po3rin/github_link_creator -->
             <a title="OSS" href="https://github.com/Gompei/slack-rust" target="_blank">
               <img src="https://gom60.com/image/utile/slack-rust.webp" width="360px">
