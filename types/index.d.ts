@@ -11,6 +11,4 @@ export interface Article {
   content?: string
   createTimeStamp?: string
   updateTimeStamp?: string
-  publicFlg?: boolean
-  deleteFlg?: boolean
 }
