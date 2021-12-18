@@ -34,25 +34,6 @@
       <div class="container pt-5 mx-auto">
         <div class="text-center">
           <p class="sm:text-xl text-2xl font-medium text-gray-900">
-            Webアプリ
-          </p>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-28 line rounded-full bg-indigo-500 inline-flex" />
-        </div>
-        <div class="flex justify-center">
-          <div class="flex text-center cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
-            <div class="flex-grow font-medium px-2">
-              coming soon...
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="container pt-5 mx-auto">
-        <div class="text-center">
-          <p class="sm:text-xl text-2xl font-medium text-gray-900">
             資格
           </p>
         </div>
