@@ -8,8 +8,6 @@ const nuxtConfig: NuxtConfig = {
     fallback: 'error.html'
   },
   publicRuntimeConfig: {
-    userPoolId: process.env.USER_POOL_ID || '',
-    clientId: process.env.CLIENT_ID || '',
     baseURL: process.env.BASE_URL || '',
     // 別にみられて良いので記載
     apiKey: process.env.API_KEY || ''
