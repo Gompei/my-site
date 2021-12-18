@@ -134,11 +134,11 @@ export default class Id extends Vue {
       }
     })
 
-    // if (this.$route.params.id !== undefined) {
-    //   this.getArticleData(this.$route.params.id.toString())
-    // } else {
-    //   this.$router.push('/')
-    // }
+    if (this.$route.params.id !== undefined) {
+      this.getArticleData(this.$route.params.id.toString())
+    } else {
+      this.$router.push('/')
+    }
   }
 
   async getArticleData (id: string) {

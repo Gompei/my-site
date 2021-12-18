@@ -24,13 +24,13 @@ export default class Index extends Vue {
   private loading: boolean = true
 
   created () {
-    // this.listArticleData()
+    this.listArticleData()
   }
 
-  // async listArticleData () {
-  //   const response = await this.$repositories.clients.list()
-  //   this.articles = response.data
-  //   this.loading = false
-  // }
+  async listArticleData () {
+    const response = await this.$repositories.clients.list()
+    this.articles = response.data
+    this.loading = false
+  }
 }
 </script>
