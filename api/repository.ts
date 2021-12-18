@@ -5,11 +5,8 @@ import { AxiosResponse } from 'axios'
 import { Article } from '@/types'
 
 export interface CRUDActions {
-    list(query?: string): Promise<AxiosResponse<Article[]>>
+    list(): Promise<AxiosResponse<Article[]>>
     get(id: string): Promise<AxiosResponse<Article>>
-    put<T>(payload: any): Promise<AxiosResponse<T>>
-    delete<T>(id: string): Promise<AxiosResponse<T>>
-    test<T>(): Promise<AxiosResponse<T>>
 }
 
 export default (client: NuxtAxiosInstance) => (resource: string) => ({
@@ -18,14 +15,5 @@ export default (client: NuxtAxiosInstance) => (resource: string) => ({
   },
   get (id: number) {
     return client.get<Article>(`api/${resource}/${id}`)
-  },
-  put<T> (payload: any) {
-    return client.put<T>(`api/${resource}`, payload)
-  },
-  delete (id?: number) {
-    return client.delete(`api/${resource}/${id}`)
-  },
-  test () {
-    return client.get('/api/test')
   }
 })

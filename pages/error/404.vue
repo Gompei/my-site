@@ -3,14 +3,11 @@
     <div class="container flex flex-col md:flex-row items-center justify-center text-gray-700">
       <div class="text-center max-w-md">
         <div class="text-5xl font-dark font-bold">
-          404
+          404 Error
         </div>
-        <p class="text-2xl md:text-3xl font-dark font-bold">
-          NotFound
-        </p>
       </div>
       <div>
-        <img src="https://gom60.com/image/utile/error_icon.webp" class="error-image" alt="error icon">
+        <img src="https://gom60.com/image/utile/nanimoshitenai.gif" alt="error icon" width="360px">
       </div>
     </div>
   </div>

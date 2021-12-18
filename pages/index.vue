@@ -30,7 +30,10 @@ export default class Index extends Vue {
   async listArticleData () {
     const response = await this.$repositories.clients.list()
     this.articles = response.data
-    this.loading = false
+
+    setTimeout(() => {
+      this.loading = false
+    }, 1000)
   }
 }
 </script>
