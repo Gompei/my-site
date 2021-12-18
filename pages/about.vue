@@ -22,10 +22,11 @@
           <div class="w-28 line rounded-full bg-indigo-500 inline-flex" />
         </div>
         <div class="flex justify-center">
-          <div class="flex text-center cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
-            <div class="flex-grow font-medium px-2">
-              coming soon...
-            </div>
+          <div class="mt-4">
+            <!-- https://github.com/po3rin/github_link_creator -->
+            <a title="OSS" href="https://github.com/Gompei/slack-rust" target="_blank">
+              <img src="https://gom60.com/image/utile/slack-rust.webp" width="360px">
+            </a>
           </div>
         </div>
       </div>
