@@ -75,7 +75,7 @@ jobs:
           role-session-name: my-site-front-github-actions-session
       
       - name: Deploy Site
-        run: aws s3 cp dist s3://${{secrets.MY_SITE_DOMAIN}}/ --recursive
+        run: aws s3 sync dist s3://${{secrets.MY_SITE_DOMAIN}}/ --delete
 
       - name: Delete cache  
         run: aws cloudfront create-invalidation --distribution-id $(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items[0]=='${{secrets.MY_SITE_DOMAIN}}'].Id" --output text) --paths "/*"
