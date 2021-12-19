@@ -21,30 +21,9 @@ function toCamelCaseObject (obj: Object) {
   return result
 }
 
-function toUnderscoreCase (str: string): string {
-  return str.split(/(?=[A-Z])/).join('_').toLowerCase()
-}
-
-function toUnderscoreCaseObject (obj: any) {
-  const result = {}
-  for (const key in obj) {
-    // TODO
-    // @ts-ignore
-    result[toUnderscoreCase(key)] = obj[key]
-  }
-  return result
-}
-
 const settingsAxios = (context: Context, axios: NuxtAxiosInstance): NuxtAxiosInstance => {
   axios.setBaseURL(context.$config.baseURL)
   axios.setHeader('x-api-key', context.$config.apiKey)
-
-  axios.interceptors.request.use((request) => {
-    if (request.method === 'put') {
-      request.data = toUnderscoreCaseObject(request.data)
-    }
-    return request
-  })
 
   axios.interceptors.response.use((response) => {
     if (response.headers['content-type'] === 'application/json' && response.config.method === 'get') {
