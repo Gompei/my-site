@@ -153,7 +153,7 @@ export default class Id extends Vue {
 
     setTimeout(() => {
       this.loading = false
-    }, 1000)
+    }, 300)
   }
 }
 </script>

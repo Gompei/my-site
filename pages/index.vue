@@ -33,7 +33,7 @@ export default class Index extends Vue {
 
     setTimeout(() => {
       this.loading = false
-    }, 1000)
+    }, 300)
   }
 }
 </script>
