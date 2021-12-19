@@ -12,7 +12,7 @@
  * Description: Terraform (HCL) language definition
  * Category: scripting
  */
-function hljsDefineTerraform (hljs) {
+function hljsDefineTerraform (hljs: any) {
   const NUMBERS = {
     className: 'number',
     begin: '\\b\\d+(\\.\\d+)?',
