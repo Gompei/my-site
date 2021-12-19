@@ -116,8 +116,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import { marked } from 'marked'
-import hljs from 'highlight.js'
 import { Article } from '@/types'
 
 @Component
@@ -127,13 +125,6 @@ export default class Id extends Vue {
   private loading: boolean = true
 
   created () {
-    marked.setOptions({
-      langPrefix: '',
-      highlight (code, lang) {
-        return hljs.highlightAuto(code, [lang]).value
-      }
-    })
-
     if (this.$route.params.id !== undefined) {
       this.getArticleData(this.$route.params.id.toString())
     } else {
@@ -149,11 +140,11 @@ export default class Id extends Vue {
     }
 
     this.article = response.data
-    this.markdown = marked(this.article.content === undefined ? '' : this.article.content)
+    this.markdown = this.$marked(this.article.content === undefined ? '' : this.article.content)
 
     setTimeout(() => {
       this.loading = false
-    }, 300)
+    }, 50)
   }
 }
 </script>

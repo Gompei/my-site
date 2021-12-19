@@ -38,6 +38,7 @@ const nuxtConfig: NuxtConfig = {
     '@/node_modules/highlight.js/styles/vs2015.css'
   ],
   plugins: [
+    '@/plugins/marked.ts',
     '@/plugins/repositoryFactory.ts',
     '@/plugins/tuiEditor.client.ts'
   ],
