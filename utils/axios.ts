@@ -59,7 +59,11 @@ const settingsAxios = (context: Context, axios: NuxtAxiosInstance): NuxtAxiosIns
     return response
   })
 
-  axios.onError((_error) => {
+  axios.onError((error) => {
+    if (error.response?.status === 404) {
+      context.redirect('/error/404')
+    }
+
     context.redirect('/error/500')
   })
 
