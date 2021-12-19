@@ -141,10 +141,7 @@ export default class Id extends Vue {
 
     this.article = response.data
     this.markdown = this.$marked(this.article.content === undefined ? '' : this.article.content)
-
-    setTimeout(() => {
-      this.loading = false
-    }, 50)
+    this.loading = false
   }
 }
 </script>
