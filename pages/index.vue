@@ -23,7 +23,7 @@ export default class Index extends Vue {
   private articles: Article[] = []
   private loading: boolean = true
 
-  created () {
+  mounted () {
     this.listArticleData()
   }
 

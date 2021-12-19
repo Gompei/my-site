@@ -124,7 +124,7 @@ export default class Id extends Vue {
   private markdown: string = ''
   private loading: boolean = true
 
-  created () {
+  mounted () {
     if (this.$route.params.id !== undefined) {
       this.getArticleData(this.$route.params.id.toString())
     } else {
