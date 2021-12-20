@@ -11,7 +11,7 @@
       <div class="container">
         <div class="flex flex-wrap place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div v-for="(article, i) in articles" :key="i" class="p-1 flex-1">
-            <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-2">
+            <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-92 w-80 cursor-pointer m-2">
               <nuxt-link :to="{ name: 'article-id', params: { id: article.id }}">
                 <img alt="blog photo" :src="article.imageUrl" class="max-h-40 w-full object-cover" width="100%" height="100%">
                 <div class="bg-white px-4 py-3">
