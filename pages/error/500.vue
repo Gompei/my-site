@@ -7,7 +7,10 @@
         </div>
       </div>
       <div>
-        <img src="https://gom60.com/image/utile/nanimoshitenai.gif" alt="error icon" width="360px">
+        <video autoplay loop muted playsinline width="360px">
+          <source src="https://gom60.com/image/utile/nanimoshitenai.webm" type="video/webm">
+          Sorry, your browser doesn't support embedded videos.
+        </video>
       </div>
     </div>
   </div>
