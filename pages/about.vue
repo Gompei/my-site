@@ -214,6 +214,24 @@
   </section>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component({
+  head: () => ({
+    title: 'Gompei Blog | About',
+    meta: [
+      { hid: 'description', name: 'description', content: 'Gompei Blog | About' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Gompeiのテックブログ | About' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://gom60.com/about' },
+      { hid: 'og:title', property: 'og:title', content: 'Gompeiのテックブログ | About' }
+    ]
+  })
+})
+export default class About extends Vue {}
+</script>
+
 <style>
 .line {
   height: 0.1px;
