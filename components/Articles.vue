@@ -9,7 +9,7 @@
     </div>
     <div>
       <div class="container">
-        <div class="flex flex-wrap place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div class="flex flex-wrap place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
           <div v-for="(article, i) in articles" :key="i" class="p-1 flex-1">
             <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-92 w-80 cursor-pointer m-2">
               <nuxt-link :to="{ name: 'article-id', params: { id: article.id }}">
