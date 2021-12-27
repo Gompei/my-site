@@ -47,7 +47,6 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
-import { Article } from '@/types'
 
 @Component({
   async asyncData (context: Context) {
@@ -78,7 +77,6 @@ import { Article } from '@/types'
   }
 })
 export default class Id extends Vue {
-  private article: Article = {}
   private markdown: string = ''
   private loading: boolean = true
 
