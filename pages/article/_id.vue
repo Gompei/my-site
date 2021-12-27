@@ -40,109 +40,49 @@
           <div v-html="markdown" />
         </div>
       </article>
-
-    <!-- <div>
-      <div class="container pt-5 w-1/2 mx-auto">
-        <div class="text-center">
-          <p class="sm:text-xl text-2xl font-medium text-gray-900">
-            別記事
-          </p>
-        </div>
-        <div class="flex justify-center">
-          <div class="w-2/5 line rounded-full bg-indigo-500 inline-flex" />
-        </div>
-        <div>
-          <div class="container mx-auto">
-            <div class="flex flex-wrap place-items-center grid grid-cols-1 sm:grid-cols-2">
-              <div class="p-1 flex-1">
-                <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-2">
-                  <nuxt-link to="/article/11111">
-                    <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
-                    <div class="bg-white p-4">
-                      <p class="text-indigo-500 text-2xl font-medium">
-                        テストタイトル
-                      </p>
-                      <p class="text-gray-800 text-sm font-medium mb-2">
-                        テストサブタイトル
-                      </p>
-                      <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
-                        <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-                          #タグ
-                        </span>
-                      </div>
-                      <div class="flex items-center mt-2">
-                        <div class="pl-3">
-                          <div class="font-medium">
-                            YYYY年MM月DD日
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </nuxt-link>
-                </div>
-              </div>
-              <div class="p-1 flex-1">
-                <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-72 cursor-pointer m-2">
-                  <nuxt-link to="/article">
-                    <img alt="blog photo" src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="max-h-40 w-full object-cover">
-                    <div class="bg-white p-4">
-                      <p class="text-indigo-500 text-2xl font-medium">
-                        テストタイトル
-                      </p>
-                      <p class="text-gray-800 text-sm font-medium mb-2">
-                        テストサブタイトル
-                      </p>
-                      <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
-                        <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-                          #タグ
-                        </span>
-                      </div>
-                      <div class="flex items-center mt-2">
-                        <div class="pl-3">
-                          <div class="font-medium">
-                            YYYY年MM月DD日
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </nuxt-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { Context } from '@nuxt/types'
 import { Article } from '@/types'
 
-@Component
+@Component({
+  async asyncData (context: Context) {
+    if (context.route.params.id === undefined) {
+      context.redirect('/')
+    }
+
+    const article = await (await context.$repositories.clients.get(context.route.params.id)).data
+    if (article.id === undefined || article.id === 0) {
+      context.redirect('error/404')
+    }
+
+    return {
+      article
+    }
+  },
+  head () {
+    return {
+      title: `${this.article.title} | Gompei Blog - Gompeiのテックブログ`,
+      meta: [
+        { hid: 'description', name: 'description', content: `${this.article.title} | Gompeiのテックブログ` },
+        { hid: 'og:site_name', property: 'og:site_name', content: `${this.article.title} | Gompeiのテックブログ` },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
+        { hid: 'og:url', property: 'og:url', content: `https://gom60.com/article/${this.article.id}` },
+        { hid: 'og:title', property: 'og:title', content: `${this.article.title} | Gompeiのテックブログ` }
+      ]
+    }
+  }
+})
 export default class Id extends Vue {
   private article: Article = {}
   private markdown: string = ''
   private loading: boolean = true
 
-  mounted () {
-    if (this.$route.params.id !== undefined) {
-      this.getArticleData(this.$route.params.id.toString())
-    } else {
-      this.$router.push('/')
-    }
-  }
-
-  async getArticleData (id: string) {
-    const response = await this.$repositories.clients.get(id)
-    if (response.data.id === undefined || response.data.id === 0) {
-      this.loading = false
-      this.$router.push('error/404')
-    }
-
-    this.article = response.data
+  created () {
     this.markdown = this.$marked(this.article.content === undefined ? '' : this.article.content)
     this.loading = false
   }
