@@ -1,17 +1,6 @@
 import { NuxtConfig } from '@nuxt/types'
 
 const nuxtConfig: NuxtConfig = {
-  server: {
-    port: '8080'
-  },
-  generate: {
-    fallback: 'error.html'
-  },
-  publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || '',
-    // 別にみられて良いので記載
-    apiKey: process.env.API_KEY || ''
-  },
   target: 'static',
   head: {
     title: 'Gompei Blog',
@@ -34,22 +23,14 @@ const nuxtConfig: NuxtConfig = {
     ]
   },
   loading: { color: '#fff' },
-  css: [
-    '@/node_modules/highlight.js/styles/vs2015.css'
-  ],
-  plugins: [
-    '@/plugins/marked.ts',
-    '@/plugins/repositoryFactory.ts',
-    '@/plugins/tuiEditor.client.ts'
-  ],
+  css: [],
+  plugins: [],
   components: true,
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss'
   ],
-  modules: [
-    '@nuxtjs/axios'
-  ],
+  modules: [],
   router: {
     extendRoutes (routes, resolve) {
       routes.push({
