@@ -1,6 +1,6 @@
 # my-site
 
-[![ci-cd](https://github.com/Gompei/my-site/actions/workflows/cicd.yml/badge.svg)](https://github.com/Gompei/my-site/actions/workflows/cicd.yml)
+[![cd](https://github.com/Gompei/my-site/actions/workflows/cicd.yml/badge.svg)](https://github.com/Gompei/my-site/actions/workflows/cicd.yml)
 
 ## リポジトリ概要
 
