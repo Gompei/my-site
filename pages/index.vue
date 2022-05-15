@@ -35,6 +35,40 @@
       <div class="container pt-5 mx-auto">
         <div class="text-center">
           <p class="sm:text-xl text-2xl font-medium text-gray-900">
+            著書
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-28 line rounded-full bg-indigo-500 inline-flex" />
+        </div>
+        <div class="flex justify-center">
+          <div class="mt-5">
+            Coming soon...
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="container pt-5 mx-auto">
+        <div class="text-center">
+          <p class="sm:text-xl text-2xl font-medium text-gray-900">
+            記事
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-28 line rounded-full bg-indigo-500 inline-flex" />
+        </div>
+        <div class="flex justify-center">
+          <div class="mt-5">
+            Coming soon...
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="container pt-5 mx-auto">
+        <div class="text-center">
+          <p class="sm:text-xl text-2xl font-medium text-gray-900">
             資格
           </p>
         </div>
@@ -87,8 +121,10 @@
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
                     <span class="bg-indigo-500 h-2 w-2 m-2 rounded-full" />
                     <div class="flex-grow font-medium px-2">
-                      2021年9月
-                      LPIC2
+                      <a title="Qualification link" href="#" target="_blank" @click.prevent.stop="alert('証明書を確認したい際は、直接ご連絡下さい。')">
+                        2021年9月
+                        LPIC2
+                      </a>
                     </div>
                   </div>
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
@@ -130,8 +166,10 @@
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
                     <span class="bg-indigo-500 h-2 w-2 m-2 rounded-full" />
                     <div class="flex-grow font-medium px-2">
-                      2021年6月
-                      OSS-DB Silver
+                      <a title="Qualification link" href="#" target="_blank" @click.prevent.stop="alert('証明書を確認したい際は、直接ご連絡下さい。')">
+                        2021年6月
+                        OSS-DB Silver
+                      </a>
                     </div>
                   </div>
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
@@ -164,8 +202,10 @@
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
                     <span class="bg-indigo-500 h-2 w-2 m-2 rounded-full" />
                     <div class="flex-grow font-medium px-2">
-                      2020年8月
-                      LPIC1
+                      <a title="Qualification link" href="#" target="_blank" @click.prevent.stop="alert('証明書を確認したい際は、直接ご連絡下さい。')">
+                        2020年8月
+                        LPIC1
+                      </a>
                     </div>
                   </div>
                   <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
@@ -218,7 +258,11 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
-export default class Index extends Vue {}
+export default class Index extends Vue {
+  private alert (message : string) {
+    window.alert(message)
+  }
+}
 </script>
 
 <style>

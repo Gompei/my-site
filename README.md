@@ -16,5 +16,4 @@
 ### 関連リポジトリ
 
 - フロント: [Gompei/my-site](https://github.com/Gompei/my-site)
-- api: [Gompei/my-site-api](https://github.com/Gompei/my-site-api)
 - インフラ: [Gompei/my-site-terraform](https://github.com/Gompei/my-site-terraform)
